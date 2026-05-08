@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Memory Recommender Simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-panel" aria-label="Generic AI assistant conversation">
+        <header class="chat-header">
+          <div class="assistant-mark">AI</div>
+          <div>
+            <h1>AI Assistant</h1>
+            <p>Generic conversation simulator</p>
+          </div>
+          <button id="resetButton" class="icon-button" type="button" title="Reset conversation" aria-label="Reset conversation">
+            Reset
+          </button>
+        </header>
+
+        <div id="conversation" class="conversation" aria-live="polite">
+          <article class="message ai">
+            <div class="avatar">AI</div>
+            <div class="bubble">
+              <p>Hi. Ask me anything.</p>
+              <span class="time">Ready</span>
+            </div>
+          </article>
+        </div>
+
+        <form id="chatForm" class="composer" autocomplete="off">
+          <input
+            id="messageInput"
+            name="message"
+            type="text"
+            maxlength="240"
+            placeholder="Ask anything..."
+            aria-label="Message"
+          />
+          <button type="submit" aria-label="Send message">Send</button>
+        </form>
+      </section>
+
+      <aside class="recommender-panel" aria-label="Product recommendation scoring panel">
+        <header class="panel-header">
+          <div>
+            <span class="eyebrow">Memory-based recommender</span>
+            <h2>Product Relevance Scores</h2>
+          </div>
+          <button id="clearLogButton" class="text-button" type="button">Clear Log</button>
+        </header>
+
+        <section class="control-card" aria-label="Ad trigger controls">
+          <div class="control-row">
+            <label for="thresholdInput">Ad threshold</label>
+            <output id="thresholdValue" for="thresholdInput">45 pts</output>
+          </div>
+          <input id="thresholdInput" type="range" min="10" max="100" step="5" value="45" />
+          <div class="trigger-grid">
+            <div>
+              <span class="metric-label">Rounds</span>
+              <strong id="roundCount">0/3</strong>
+            </div>
+            <div>
+              <span class="metric-label">Top score</span>
+              <strong id="topScore">0 pts</strong>
+            </div>
+            <div>
+              <span class="metric-label">Ad status</span>
+              <strong id="adStatus">Waiting</strong>
+            </div>
+          </div>
+          <p id="triggerExplanation" class="small-note">
+            Ads require a top candidate score at or above the threshold and at least three complete user-AI rounds.
+          </p>
+        </section>
+
+        <section class="candidate-section" aria-label="Eligible product candidates">
+          <div class="section-title">
+            <h3>Eligible Candidates</h3>
+            <span id="candidateCount">0 shown</span>
+          </div>
+          <div id="candidateList" class="candidate-list"></div>
+        </section>
+
+        <section class="memory-section" aria-label="Extracted memory signals">
+          <div class="section-title">
+            <h3>Feature Engineering Memory</h3>
+            <span id="memoryCount">0 signals</span>
+          </div>
+          <div id="memorySignals" class="memory-signals"></div>
+        </section>
+
+        <section class="log-section" aria-label="Decision log">
+          <div class="section-title">
+            <h3>Decision Log</h3>
+          </div>
+          <ol id="decisionLog" class="decision-log"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
