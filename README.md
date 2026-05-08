@@ -4,6 +4,12 @@
 
 The app is intentionally dependency-free: it uses plain HTML, CSS, and JavaScript, so it can be opened directly or served with any simple static server.
 
+## API Key Safety
+
+This simulator does not require an OpenAI API key. Do not put API keys in `index.html`, `app.js`, or any other committed file.
+
+If a later version adds a real API integration, keep keys in an untracked local environment file such as `.env`. The `.gitignore` is configured to exclude `.env`, `.env.*`, and common secret/key files.
+
 ## What It Demonstrates
 
 - A generic AI assistant conversation, similar in structure to ChatGPT or Gemini

@@ -1,8 +1,14 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# Local secrets. Do not commit API keys.
 .env
 .env.*
+*.key
+*.pem
+secrets.*
+
 node_modules/
 dist/
 coverage/
