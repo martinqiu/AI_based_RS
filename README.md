@@ -1,4 +1,5 @@
 # AI-Based Recommender System Simulator
+<img width="1258" height="595" alt="image" src="https://github.com/user-attachments/assets/63b5922f-87a3-4dec-b170-1093ea9a6225" />
 
 `AI_based_RS` is a classroom simulator for showing how conversational memory can feed a product recommender inside a generic AI assistant interface.
 
